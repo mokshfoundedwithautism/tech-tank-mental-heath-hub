@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mental Health Awareness Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(to right, #99e1d9, #fcd5ce);
+      padding: 2rem;
+      text-align: center;
+      color: #003333;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      background-color: #ffffff;
+      padding: 1rem 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    nav a {
+      text-decoration: none;
+      color: #006666;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #004d4d;
+    }
+    section {
+      padding: 1rem 2rem;
+    }
+    .card {
+      background-color: #ffffff;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-left: 6px solid #00b3b3;
+    }
+    .dashboard-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .stat-box {
+      background-color: #e0f7f7;
+      padding: 1rem;
+      flex: 1;
+      border-radius: 10px;
+      min-width: 120px;
+      text-align: center;
+      border: 2px dashed #00cccc;
+    }
+    .hidden { display: none; }
+    img.banner {
+      width: 100%;
+      max-height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+    img.small-pic {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      margin: 0.5rem 0;
+      border-radius: 8px;
+    }
+    button {
+      background-color: #00b3b3;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #008080;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mental Health Awareness Hub</h1>
+    <p>Promoting mental wellness through awareness, events, and volunteering</p>
+    <img class="banner" src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?fit=crop&w=1200&q=80" alt="Healthy Food Mental Health">
+  </header>
+
+  <nav>
+    <a href="#home" onclick="showPage('home')">Home</a>
+    <a href="#events" onclick="showPage('events')">Events</a>
+    <a href="#dashboard" onclick="showPage('dashboard')">Volunteer Dashboard</a>
+  </nav>
+
+  <main>
+    <div id="home" class="page">
+      <section class="card">
+        <h2>Motivational Tips</h2>
+        <ul>
+          <li>Take deep breaths – you’re doing your best.<br><img class="small-pic" src="https://images.unsplash.com/photo-1588776814814-cddc38d21f5a?fit=crop&w=400&q=80" alt="Deep Breathing"></li>
+          <li>Enjoy healthy meals for your brain.<br><img class="small-pic" src="https://images.unsplash.com/photo-1506084868230-bb9d95c24759?fit=crop&w=400&q=80" alt="Healthy Food"></li>
+          <li>Keep your space clean and cozy.<br><img class="small-pic" src="https://images.unsplash.com/photo-1618214838473-cc4b75f1f9b8?fit=crop&w=400&q=80" alt="Clean Space"></li>
+          <li>Practice gratitude daily.<br><img class="small-pic" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?fit=crop&w=400&q=80" alt="Gratitude"></li>
+          <li>Get regular physical activity.<br><img class="small-pic" src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?fit=crop&w=400&q=80" alt="Exercise"></li>
+          <li>Sleep well and rest when needed.<br><img class="small-pic" src="https://images.unsplash.com/photo-1552089123-2c3b5cee3b40?fit=crop&w=400&q=80" alt="Sleep"></li>
+        </ul>
+      </section>
+      <section class="card">
+        <h2 style="font-size: 1.75rem;">Upcoming Events</h2>
+        <ul style="font-size: 1.1rem;">
+          <li>🧘 Mindfulness Workshop – June 28</li>
+          <li>📚 Mental Health Talk – July 5</li>
+          <li>🌿 Campus Nature Walk – July 12</li>
+        </ul>
+        <img class="banner" src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?fit=crop&w=1200&q=80" alt="Event Board">
+      </section>
+    </div>
+
+    <div id="events" class="page hidden">
+      <section class="card">
+        <h2>Event: Yoga & Breathing</h2>
+        <p>Date: June 28</p>
+        <p>Relaxation techniques with certified trainers</p>
+        <img class="banner" src="https://images.unsplash.com/photo-1591208215703-5ad3d573f8bb?fit=crop&w=400&q=80" alt="Yoga Mat">
+        <button>RSVP</button>
+      </section>
+
+      <section class="card">
+        <h2>Event: Mental Health Talk</h2>
+        <p>Date: July 5</p>
+        <p>Panel discussion with mental health professionals</p>
+        <img class="banner" src="https://images.unsplash.com/photo-1588776814546-26f3b05f0a1f?fit=crop&w=400&q=80" alt="Notebook and Tea">
+        <button>RSVP</button>
+      </section>
+
+      <section class="card">
+        <h2>Event: Campus Nature Walk</h2>
+        <p>Date: July 12</p>
+        <p>A peaceful group walk to connect with nature and unwind</p>
+        <img class="banner" src="https://images.unsplash.com/photo-1576086213369-97a306d36512?fit=crop&w=400&q=80" alt="Forest Trail">
+        <button>RSVP</button>
+      </section>
+    </div>
+
+    <div id="dashboard" class="page hidden">
+      <section class="card">
+        <h2>Volunteer Profile</h2>
+        <p><strong>Name:</strong> Alex Johnson</p>
+        <p><strong>Register No:</strong> MH2025043</p>
+        <p><strong>Class:</strong> BSc Psychology, III Year</p>
+        <p><strong>Committee:</strong> Event Coordination</p>
+      </section>
+
+      <section class="card">
+        <h2>Volunteer Stats</h2>
+        <div class="dashboard-stats">
+          <div class="stat-box">
+            <h3>25</h3>
+            <p>Hours Contributed</p>
+          </div>
+          <div class="stat-box">
+            <h3>5</h3>
+            <p>Events Attended</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Working Hours Over Time</h2>
+        <canvas id="hoursChart" height="150"></canvas>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(page => page.classList.add('hidden'));
+      document.getElementById(pageId).classList.remove('hidden');
+    }
+
+    const ctx = document.getElementById('hoursChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+        datasets: [{
+          label: 'Hours Volunteered',
+          data: [2, 5, 8, 10],
+          backgroundColor: 'rgba(0, 153, 153, 0.2)',
+          borderColor: 'rgba(0, 153, 153, 1)',
+          borderWidth: 2,
+          tension: 0.3
+        }]
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
